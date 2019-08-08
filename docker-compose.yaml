@@ -1,20 +1,20 @@
 version: '3.3'
 services:
-    accoount-maker-2:
+    account-maker-2:
         image: joebenrob/account-maker-2:latest
-        ports: [{target: 8081, protocol: tcp}]
+        ports: [{target: 8081, protocol: tcp, published: 8081}]
     account-maker-numgen:
         image: joebenrob/account-maker-numgen:latest
-        ports: [{target: 8083, protocol: tcp}]
+        ports: [{target: 8083, protocol: tcp, published: 8083}]
     account-maker-prizegen:
         image: joebenrob/account-maker-prizegen:latest
-        ports: [{target: 8082, protocol: tcp}]
+        ports: [{target: 8082, protocol: tcp, published: 8082}]
     account-maker-consumer:
         image: joebenrob/account-maker-consumer:latest
-        ports: [{target: 8084, protocol: tcp}]
+        ports: [{target: 8084, protocol: tcp, published: 8084}]
     activemq:
         image: webcenter/activemq
-        ports: [{target: 61616, protocol: tcp}]
+        ports: [{target: 61616, protocol: tcp, published: 61616}]
     mongo:
         image: mongo:latest
         ports: [{target: 27017, protocol: tcp, published: 27017}]
