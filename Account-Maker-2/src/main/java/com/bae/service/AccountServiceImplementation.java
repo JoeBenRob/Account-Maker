@@ -53,7 +53,7 @@ public class AccountServiceImplementation implements AccountService {
 	@Override
 	public String getNum() {
 
-		ResponseEntity<String> exchangeNum = restTemplate.exchange("http://localhost:8083/NumGen/NumGen/",
+		ResponseEntity<String> exchangeNum = restTemplate.exchange("http://account-maker-numgen:8083/NumGen/NumGen/",
 				HttpMethod.GET, null, String.class);
 
 		return exchangeNum.getBody();
@@ -62,7 +62,7 @@ public class AccountServiceImplementation implements AccountService {
 	@Override
 	public String getPrize(String num) {
 
-		ResponseEntity<String> exchangePrize = restTemplate.exchange("http://localhost:8082/PrizeGen/PrizeGen/" + num,
+		ResponseEntity<String> exchangePrize = restTemplate.exchange("http://account-maker-prizegen:8082/PrizeGen/PrizeGen/" + num,
 				HttpMethod.GET, null, String.class);
 
 		return exchangePrize.getBody();
